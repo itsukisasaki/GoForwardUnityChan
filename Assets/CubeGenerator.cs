@@ -58,4 +58,18 @@ public class CubeGenerator : MonoBehaviour
             this.span = this.offsetX + this.spaceX * n;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log("è’ìÀ" + other.gameObject.tag);
+        if (other.gameObject.tag == "CubeTag")
+        {
+            GetComponent<AudioSource>().Play();
+        }
+
+        if (other.gameObject.tag == "GroundTag")
+        {
+            GetComponent<AudioSource>().Play();
+        }
+    }
 }
